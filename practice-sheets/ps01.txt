@@ -1,0 +1,150 @@
+#Q1
+pwd
+
+#Q2
+ls -la
+
+#Q3
+mkdir ~/project
+
+#Q4
+touch ~/project/notes.txt
+
+#Q5
+cat notes.txt
+
+#Q6
+head -n 5 access.log
+
+#Q7
+cp report.txt report_backup.txt
+
+#Q8
+mv draft.txt final.txt
+
+#Q9
+chmod 700 script.sh
+
+#Q10
+ls -l
+
+#Q11
+ps
+
+#Q12
+top
+
+#Q13
+grep "error" server.log
+
+#Q14
+wc -l data.csv
+
+#Q15
+date > today.txt
+
+#Q16
+echo "Task completed" >> log.txt
+
+#Q17
+free -h
+
+#Q18
+df -h
+
+#Q19
+ping -c 4 google.com
+
+#Q20
+hostname
+
+#Q21
+find /home/user/documents -name "*.txt"
+
+#Q22
+mkdir -p project/src/main
+
+#Q23
+cp -r configs /backup/configs
+
+#Q24
+rm -rf temp
+
+#Q25
+tail -n 20 -f syslog
+
+#Q26
+diff file1.txt file2.txt
+
+#Q27
+chown devuser:devgroup app.log
+
+#Q28
+chmod -R o+rx public_html
+
+#Q29
+pgrep nginx
+
+#Q30
+kill 4521
+
+#Q31
+cut -d: -f2 /etc/passwd
+
+#Q32
+sort -nr scores.txt
+
+#Q33
+grep "404" access.log | wc -l
+
+#Q34
+du -ah | sort -rh | head -n 10
+
+#Q35
+tar -czvf backup.tar.gz project
+
+#Q36
+tar -xzvf backup.tar.gz
+
+#Q37
+sudo apt update && sudo apt upgrade -y
+
+#Q38
+sudo dnf install htop
+
+#Q39
+sudo useradd -m student1
+
+#Q40
+du -sh /var/log
+
+#Q41
+awk '{print $1}' access.log | sort | uniq -c | sort -nr | head -n 5
+
+#Q42
+awk -F, 'NR>1 && $5>50000 {print $3, $5}' employees.csv
+
+#Q43
+ps -u www-data -o pid,%cpu,comm | awk '$2>5'
+
+#Q44
+nohup ./backup.sh > backup.log 2>&1 &
+
+#Q45
+chmod 2770 /srv/team
+
+#Q46
+find /var/www -type f -perm -o+w -exec chmod o-w {} \;
+
+#Q47
+tar --exclude='*.tmp' -czvf etc_backup_$(date +%Y-%m-%d).tar.gz /etc
+
+#Q48
+crontab -e
+# 30 2 * * * /home/user/cleanup.sh >> /home/user/cleanup.log 2>&1
+
+#Q49
+sudo ss -tulnp | grep 8080
+
+#Q50
+ps -eo pid,%mem,comm --sort=-%mem | head -n 6
