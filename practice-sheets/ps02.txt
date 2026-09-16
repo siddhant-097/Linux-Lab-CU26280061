@@ -1,0 +1,151 @@
+#Q1
+# r = read, w = write, x = execute
+
+#Q2
+# Owner: rwx, Group: r-x, Others: r--
+
+#Q3
+ls -la
+
+#Q4
+# 755
+
+#Q5
+# rw-r--r--
+
+#Q6
+# chmod 700: Owner rwx, group/others none. chmod 777: Everyone rwx.
+
+#Q7
+chmod 600 notes.txt
+
+#Q8
+# 'd' indicates a directory.
+
+#Q9
+# chown changes owner; chgrp changes owning group.
+
+#Q10
+sudo chown alice report.pdf
+
+#Q11
+ps aux
+
+#Q12
+# PID is Process ID, a unique identifier assigned by the Linux kernel.
+
+#Q13
+ps -u $USER
+
+#Q14
+# top provides a live interactive real-time view, whereas ps aux displays a static snapshot.
+
+#Q15
+# Press 'q' key inside top.
+
+#Q16
+# SIGTERM (Signal 15)
+
+#Q17
+kill -9 4521
+
+#Q18
+# Foreground: occupies terminal, accepts stdin. Background: runs independently.
+
+#Q19
+# &
+
+#Q20
+fg
+
+#Q21
+chmod u+x script.sh
+
+#Q22
+# 750 = drwxr-x---. Owner rwx, Group r-x, Others no access.
+
+#Q23
+# Execute ('x') permission allows directory traversal (cd and reading metadata).
+
+#Q24
+chmod -R g+rX shared/
+
+#Q25
+chown alice:developers file.txt
+
+#Q26
+# umask strips permission bits. umask 022 on base 666 results in 644 (rw-r--r--).
+
+#Q27
+# chmod -R applies recursively to all subfolders/files; without -R affects only top-level dir.
+
+#Q28
+# World-write (777) allows any local user to modify script contents.
+
+#Q29
+# No to both. Permission 600 grants read/write exclusively to root.
+
+#Q30
+groups
+
+#Q31
+# SIGTERM (15) requests graceful shutdown; SIGKILL (9) forces immediate termination.
+
+#Q32
+kill -SIGTERM 3300
+
+#Q33
+# %CPU: percentage of CPU core cycles consumed. %MEM: percentage of physical RAM occupied.
+
+#Q34
+pgrep apache2
+
+#Q35
+# Zombie process completed execution but remains in process table until parent reads exit status.
+
+#Q36
+# nice sets priority on new process; renice alters priority of active process.
+
+#Q37
+# Parent process spawns child process via fork()/exec().
+
+#Q38
+pstree
+
+#Q39
+# jobs displays active background/suspended tasks in shell session.
+
+#Q40
+# nohup ./script.sh &
+
+#Q41
+# SUID allows execution with privileges of file owner. Example: /usr/bin/passwd.
+
+#Q42
+chmod g+s shared/
+
+#Q43
+# Sticky bit prevents deletion/renaming unless owning file/dir or root. Example: /tmp.
+
+#Q44
+# Lowercase 's' in owner slot indicates SUID bit is active.
+
+#Q45
+# World-writable file in /etc allows unprivileged users to modify config for root privilege escalation.
+
+#Q46
+# systemd acts as PID 1, managing services in cgroups. systemctl status shows main PID.
+
+#Q47
+# apt remove leaves config files in /etc; apt purge removes config files as well.
+
+#Q48
+# apt update updates package metadata indexes; apt upgrade installs newer versions.
+
+#Q49
+dpkg -l | grep package_name
+
+#Q50
+ps aux | grep process_name
+kill -15 PID
+kill -9 PID
