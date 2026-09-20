@@ -1,0 +1,170 @@
+#Q1
+#!/bin/bash
+name="Rahul"
+echo "Hello, $name"
+
+#Q2
+#!/bin/bash
+read -p "Enter your name: " name
+read -p "Enter your city: " city
+echo "Welcome, $name from $city!"
+
+#Q3
+#!/bin/bash
+read -p "Enter first number: " a
+read -p "Enter second number: " b
+sum=$((a + b))
+diff=$((a - b))
+prod=$((a * b))
+echo "Sum = $sum"
+echo "Difference = $diff"
+echo "Product = $prod"
+echo "Today is: $(date)"
+
+#Q4
+#!/bin/bash
+read -p "Enter a number: " num
+if [ "$num" -gt 0 ]; then
+    echo "Positive number"
+elif [ "$num" -lt 0 ]; then
+    echo "Negative number"
+else
+    echo "Zero"
+fi
+
+#Q5
+#!/bin/bash
+if [ -f "notes.txt" ]; then
+    echo "File found"
+else
+    echo "File not found"
+fi
+
+#Q6
+#!/bin/bash
+if [ -d "$1" ]; then
+    echo "Directory exists"
+else
+    echo "Directory does not exist"
+fi
+
+#Q7
+#!/bin/bash
+for ((i=1; i<=10; i++))
+do
+    echo "Number: $i"
+done
+
+#Q8
+#!/bin/bash
+for file in *.txt
+do
+    echo "Found file: $file"
+done
+
+#Q9
+#!/bin/bash
+count=1
+while [ $count -le 5 ]
+do
+    echo "Count is: $count"
+    count=$((count + 1))
+done
+
+#Q10
+#!/bin/bash
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Second argument: $2"
+echo "Number of arguments: $#"
+echo "All arguments: $@"
+if [ $# -eq 0 ]; then
+    echo "No arguments provided!"
+    exit 1
+fi
+echo "Script completed successfully"
+exit 0
+
+#Q11
+echo "Linux Lab 3" > output.txt
+cat output.txt
+echo "New content" > output.txt
+cat output.txt
+
+#Q12
+echo "First entry" >> today.txt
+echo "Second entry" >> today.txt
+echo "Third entry" >> today.txt
+cat today.txt
+
+#Q13
+printf "Zara
+Amit
+Neha
+Ravin
+" > names.txt
+sort < names.txt
+
+#Q14
+ls nonexistentfolder 2> errors.log
+cat errors.log
+
+#Q15
+ls . nonexistentfolder > command.log 2>&1
+cat command.log
+
+#Q16
+ls -1 | wc -l
+
+#Q17
+cat data.txt | tr ' ' '
+' | sort | uniq
+
+#Q18
+ps aux | grep sleep | grep -v grep
+
+#Q19
+#!/bin/bash
+target_dir="$1"
+if [ ! -d "$target_dir" ]; then
+    echo "Error: Directory does not exist"
+    exit 1
+fi
+count=0
+for file in "$target_dir"/*.bak
+do
+    if [ -f "$file" ]; then
+        echo "Found backup: $file"
+        count=$((count + 1))
+    fi
+done
+if [ $count -eq 0 ]; then
+    echo "No backup files found." >> backup_log.txt
+    echo "No backups found. Logged to backup_log.txt"
+else
+    echo "Total backups found: $count"
+fi
+exit 0
+
+#Q20
+#!/bin/bash
+file="$1"
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <file>"
+    exit 1
+fi
+if [ ! -f "$file" ]; then
+    echo "File does not exist"
+    exit 1
+fi
+if [ ! -r "$file" ]; then
+    echo "File is not readable"
+    exit 1
+fi
+read lines words chars <<< "$(wc -l -w -c < "$file")"
+echo "File: $file"
+echo "Lines: $lines"
+echo "Words: $words"
+echo "Characters: $chars"
+echo "$(date) - $0 processed $file" >> execution_history.log
+exit 0
