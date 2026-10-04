@@ -1,0 +1,97 @@
+#Q1
+whoami
+id
+
+#Q2
+getent passwd username
+
+#Q3
+sudo passwd -S username
+
+#Q4
+sudo useradd labuser1
+getent passwd labuser1
+
+#Q5
+sudo useradd -m labuser2
+getent passwd labuser2
+ls -ld /home/labuser2
+
+#Q6
+sudo useradd -s /bin/bash labuser3
+getent passwd labuser3
+
+#Q7
+sudo passwd labuser1
+sudo passwd -S labuser1
+
+#Q8
+sudo passwd labuser1
+sudo passwd -S labuser1
+
+#Q9
+sudo usermod -s /bin/bash labuser2
+getent passwd labuser2
+
+#Q10
+sudo usermod -d /home/labuser2_new labuser2
+getent passwd labuser2
+sudo usermod -d /home/labuser2_new -m labuser2
+ls -ld /home/labuser2_new
+
+#Q11
+sudo groupadd userlabgroup
+sudo usermod -aG userlabgroup labuser1
+id labuser1
+
+#Q12
+sudo passwd -l labuser3
+sudo passwd -S labuser3
+sudo passwd -u labuser3
+sudo passwd -S labuser3
+
+#Q13
+sudo chage -l labuser3
+
+#Q14
+sudo chage -E 2026-12-31 labuser3
+sudo chage -l labuser3
+
+#Q15
+sudo usermod -g existinggroup labuser1
+id labuser1
+
+#Q16
+id username
+groups username
+getent passwd username
+getent group groupname
+
+#Q17
+sudo userdel labuser1
+getent passwd labuser1
+ls -ld /home/labuser1
+
+#Q18
+sudo userdel -r labuser2
+getent passwd labuser2
+ls -ld /home/labuser2
+
+#Q19
+sudo useradd -m -s /bin/bash labworkflow
+sudo passwd labworkflow
+sudo usermod -aG userlabgroup labworkflow
+sudo passwd -l labworkflow
+sudo passwd -S labworkflow
+sudo passwd -u labworkflow
+id labworkflow
+sudo chage -l labworkflow
+
+#Q20
+getent passwd labuser1
+getent passwd labuser2
+getent passwd labuser3
+sudo userdel -r labuser1
+sudo userdel -r labuser2
+sudo userdel -r labuser3
+sudo groupdel userlabgroup
