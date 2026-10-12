@@ -1,0 +1,92 @@
+#Q1
+mkdir lab6
+cd lab6
+touch permissions.txt
+
+#Q2
+ls -l permissions.txt
+
+#Q3
+chmod u=rwx,g=rw,o= permissions.txt
+ls -l permissions.txt
+
+#Q4
+chmod 640 permissions.txt
+ls -l permissions.txt
+
+#Q5
+chmod 755 permissions.txt
+ls -l permissions.txt
+
+#Q6
+chmod u-x permissions.txt
+ls -l permissions.txt
+
+#Q7
+chmod g+rx permissions.txt
+ls -l permissions.txt
+
+#Q8
+chmod o-rwx permissions.txt
+ls -l permissions.txt
+
+#Q9
+mkdir securedata
+chmod 750 securedata
+ls -ld securedata
+
+#Q10
+mkdir permission_test
+chmod 700 permission_test
+ls -ld permission_test
+
+#Q11
+umask
+
+#Q12
+umask 027
+touch umask_file.txt
+mkdir umask_dir
+ls -l umask_file.txt
+ls -ld umask_dir
+
+#Q13
+umask 022
+
+#Q14
+sudo groupadd aclgroup
+sudo useradd -m acluser
+touch aclfile.txt
+
+#Q15
+getfacl aclfile.txt
+
+#Q16
+setfacl -m u:acluser:rw aclfile.txt
+getfacl aclfile.txt
+
+#Q17
+setfacl -m g:aclgroup:r aclfile.txt
+getfacl aclfile.txt
+
+#Q18
+setfacl -m u:acluser:rwx aclfile.txt
+getfacl aclfile.txt
+setfacl -x u:acluser aclfile.txt
+getfacl aclfile.txt
+
+#Q19
+mkdir acldir
+setfacl -m d:u:acluser:rw,d:g:aclgroup:r acldir
+touch acldir/inherited.txt
+getfacl acldir/inherited.txt
+
+#Q20
+mkdir lab6_final
+touch lab6_final/data.txt
+chmod 640 lab6_final/data.txt
+umask 027
+touch lab6_final/umask_test.txt
+setfacl -m u:acluser:rw lab6_final/data.txt
+getfacl lab6_final/data.txt
+ls -l lab6_final/data.txt
