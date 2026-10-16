@@ -1,0 +1,87 @@
+#Q1
+ps
+
+#Q2
+ps -ef
+
+#Q3
+ps aux
+
+#Q4
+ps -ef --forest
+
+#Q5
+top
+
+#Q6
+top
+
+#Q7
+htop
+
+#Q8
+sleep 60
+
+#Q9
+sleep 300 &
+jobs
+
+#Q10
+jobs
+
+#Q11
+fg %1
+
+#Q12
+sleep 300
+jobs
+
+#Q13
+bg %1
+jobs
+
+#Q14
+jobs -l
+
+#Q15
+sleep 300 &
+jobs -l
+kill PID
+ps -p PID
+
+#Q16
+sleep 300 &
+jobs -l
+kill -TERM PID
+ps -p PID
+
+#Q17
+sleep 300 &
+jobs -l
+kill -KILL PID
+ps -p PID
+
+#Q18
+sleep 300 &
+pkill sleep
+ps -C sleep
+
+#Q19
+sleep 300 &
+sleep 300 &
+jobs -l
+ps -ef | grep sleep
+kill PID1
+kill PID2
+jobs -l
+
+#Q20
+sleep 300
+jobs -l
+bg %1
+jobs -l
+fg %1
+sleep 300 &
+jobs -l
+kill PID
+ps -p PID
