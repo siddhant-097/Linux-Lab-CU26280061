@@ -1,0 +1,72 @@
+#Q1
+rpm --version
+
+#Q2
+dnf --version
+
+#Q3
+rpm -q package_name
+
+#Q4
+rpm -qi package_name
+
+#Q5
+rpm -ql package_name
+
+#Q6
+rpm -qf /path/to/file
+
+#Q7
+rpm -qi package_name
+
+#Q8
+dnf repolist all
+
+#Q9
+dnf repoinfo repository_id
+
+#Q10
+dnf search keyword
+
+#Q11
+sudo dnf install package_name
+rpm -q package_name
+
+#Q12
+sudo dnf install package_name
+rpm -q package_name
+dnf list installed package_name
+
+#Q13
+dnf check-update
+
+#Q14
+sudo dnf update package_name
+rpm -q package_name
+
+#Q15
+sudo dnf update
+dnf history
+
+#Q16
+sudo dnf remove package_name
+rpm -q package_name
+
+#Q17
+dnf provides '*/filename'
+
+#Q18
+dnf history
+dnf history info ID
+
+#Q19
+sudo dnf install package_name
+rpm -q package_name
+sudo dnf update package_name
+rpm -qi package_name
+sudo dnf remove package_name
+rpm -q package_name
+
+#Q20
+dnf repolist all
+dnf history
