@@ -1,0 +1,83 @@
+#Q1
+df
+
+#Q2
+df -h
+
+#Q3
+du .
+
+#Q4
+du -h --max-depth=1 .
+
+#Q5
+du -h directory_name
+
+#Q6
+lsblk
+
+#Q7
+lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS
+
+#Q8
+lsblk -f
+
+#Q9
+findmnt
+
+#Q10
+sudo mkdir -p /mnt/labdisk
+ls -ld /mnt/labdisk
+
+#Q11
+sudo mount /dev/sdXN /mnt/labdisk
+lsblk -f
+findmnt /mnt/labdisk
+
+#Q12
+df -h /mnt/labdisk
+
+#Q13
+sudo touch /mnt/labdisk/testfile.txt
+ls -l /mnt/labdisk
+df -h /mnt/labdisk
+
+#Q14
+sudo umount /mnt/labdisk
+findmnt /mnt/labdisk
+
+#Q15
+cd /mnt/labdisk
+sudo umount /mnt/labdisk
+cd /
+sudo umount /mnt/labdisk
+
+#Q16
+sudo fdisk -l /dev/sdX
+
+#Q17
+sudo fdisk /dev/sdX
+lsblk
+
+#Q18
+sudo mkfs.ext4 /dev/sdXN
+sudo mount /dev/sdXN /mnt/labdisk
+lsblk -f
+df -h /mnt/labdisk
+findmnt /mnt/labdisk
+
+#Q19
+sudo umount /mnt/labdisk
+findmnt /mnt/labdisk
+lsblk -f
+
+#Q20
+lsblk -f
+df -h
+du -h --max-depth=1 /mnt
+sudo mount /dev/sdXN /mnt/labdisk
+findmnt /mnt/labdisk
+sudo touch /mnt/labdisk/storage_test.txt
+df -h /mnt/labdisk
+sudo umount /mnt/labdisk
+findmnt /mnt/labdisk
