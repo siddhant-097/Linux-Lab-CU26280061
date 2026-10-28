@@ -1,0 +1,94 @@
+#Q1
+lsblk -f
+
+#Q2
+lsblk -f
+blkid /dev/sdXN
+
+#Q3
+sudo mkfs.ext4 /dev/sdXN
+sudo blkid /dev/sdXN
+
+#Q4
+sudo blkid /dev/sdXN
+
+#Q5
+sudo mkdir -p /mnt/labfs
+ls -ld /mnt/labfs
+
+#Q6
+sudo mount /dev/sdXN /mnt/labfs
+findmnt /mnt/labfs
+lsblk -f
+
+#Q7
+df -h /mnt/labfs
+
+#Q8
+sudo touch /mnt/labfs/testfile.txt
+ls -l /mnt/labfs
+df -h /mnt/labfs
+
+#Q9
+sudo umount /mnt/labfs
+findmnt /mnt/labfs
+
+#Q10
+cat /etc/fstab
+
+#Q11
+sudo cp /etc/fstab /etc/fstab.lab10.backup
+sudo vi /etc/fstab
+
+#Q12
+sudo mount -a
+findmnt /mnt/labfs
+
+#Q13
+sudo reboot
+findmnt /mnt/labfs
+df -h /mnt/labfs
+
+#Q14
+findmnt /mnt/labfs
+df -h /mnt/labfs
+lsblk -f
+
+#Q15
+blkid /dev/sdXN
+grep labfs /etc/fstab
+
+#Q16
+sudo umount /mnt/labfs
+sudo e2fsck -f /dev/sdXN
+
+#Q17
+sudo mount /dev/sdXN /mnt/labfs
+findmnt /mnt/labfs
+sudo umount /mnt/labfs
+sudo e2fsck -f /dev/sdXN
+
+#Q18
+sudo vi /etc/fstab
+sudo mount -a
+findmnt /mnt/labfs
+
+#Q19
+sudo umount /mnt/labfs
+sudo vi /etc/fstab
+sudo mount -a
+findmnt /mnt/labfs
+
+#Q20
+sudo mkfs.ext4 /dev/sdXN
+sudo mkdir -p /mnt/labfs
+sudo mount /dev/sdXN /mnt/labfs
+lsblk -f
+df -h /mnt/labfs
+sudo touch /mnt/labfs/storage_test.txt
+sudo umount /mnt/labfs
+sudo e2fsck -f /dev/sdXN
+sudo vi /etc/fstab
+sudo mount -a
+findmnt /mnt/labfs
+sudo umount /mnt/labfs
