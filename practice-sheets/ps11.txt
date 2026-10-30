@@ -1,0 +1,98 @@
+#Q1
+mkdir -p archive_lab
+cd archive_lab
+echo "Linux archive practice" > file1.txt
+echo "tar practice" > file2.txt
+echo "compression practice" > file3.txt
+ls -l
+
+#Q2
+tar -cvf files.tar file1.txt file2.txt file3.txt
+ls -lh files.tar
+
+#Q3
+tar -tvf files.tar
+
+#Q4
+mkdir -p ../extracted_tar
+tar -xvf files.tar -C ../extracted_tar
+ls -l ../extracted_tar
+
+#Q5
+gzip file1.txt
+ls -lh file1.txt.gz
+
+#Q6
+gunzip file1.txt.gz
+ls -l file1.txt
+
+#Q7
+cd ..
+tar -czvf archive.tar.gz archive_lab
+ls -lh archive.tar.gz
+
+#Q8
+tar -tzvf archive.tar.gz
+
+#Q9
+mkdir -p extracted_gz
+tar -xzvf archive.tar.gz -C extracted_gz
+find extracted_gz -type f
+
+#Q10
+cd archive_lab
+zip files.zip file1.txt file2.txt file3.txt
+unzip -l files.zip
+
+#Q11
+cd ..
+zip -r archive_zip.zip archive_lab
+unzip -l archive_zip.zip
+
+#Q12
+mkdir -p extracted_zip
+unzip archive_zip.zip -d extracted_zip
+find extracted_zip -type f
+
+#Q13
+unzip archive_zip.zip archive_lab/file2.txt -d selected_file
+
+#Q14
+unzip -l archive_zip.zip
+
+#Q15
+tar -cvf plain.tar archive_lab
+tar -czvf compressed.tar.gz archive_lab
+ls -lh plain.tar compressed.tar.gz
+
+#Q16
+echo "new archive content" > newfile.txt
+tar -rf plain.tar newfile.txt
+tar -tvf plain.tar
+
+#Q17
+mkdir -p restore_tar restore_zip
+tar -xzvf compressed.tar.gz -C restore_tar
+unzip archive_zip.zip -d restore_zip
+find restore_tar -type f
+find restore_zip -type f
+
+#Q18
+tar -czvf backup_archive.tar.gz archive_lab
+tar -tzvf backup_archive.tar.gz
+
+#Q19
+mkdir -p restored_backup
+tar -xzvf backup_archive.tar.gz -C restored_backup
+find restored_backup -type f
+
+#Q20
+tar -cvf complete.tar archive_lab
+tar -tvf complete.tar
+gzip complete.tar
+gunzip complete.tar.gz
+zip -r complete.zip archive_lab
+unzip -l complete.zip
+mkdir -p final_restore
+unzip complete.zip -d final_restore
+find final_restore -type f
